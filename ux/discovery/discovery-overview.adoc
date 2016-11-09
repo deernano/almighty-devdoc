@@ -1,1 +1,437 @@
-= Discovery Assets
+= DISCOVERY:Work Item History
+:imagesdir: images
+
+== Overview
+Before we start the wireframe design of the work item history. We need to understand the issue and users’ scenario. The document is to research relevant aspects by asking  the following questions:
+
+. How the competitive product display history ?
+. What is the using scenario of history and activity ?
+. What is the differences between history and activity ?
+. Where to place the history function ?
+
+
+== Description
+==== *1. Competitive product history function display*
+The research is mainly focusing on 3 competitive products.
+
+. JIRA
+image:jira.jpg[]
+. asana
+image:asana.png[]
+. taiga
+image:taiga.png[]
+
+===== *a. JIRA*
+Using tab to display history
+
+image:product1.png[]
+
+The content display format is:
+
+- avatar / who / what  / when  / content before & after
+- The default is sorted by people.
+- The time is in chronological order.
+
+image:product2.png[]
+
+===== *b.asana*
+Using a list to display history
+
+The content display format is :
+
+- avatar / who / when / what
+- The default is sorted by people.
+- The time is in chronological order.
+
+image:product3.png[]
+
+===== *c.taiga*
+Using tab to display history
+
+The content display format is :
+
+- avatar / who / when/ what   ( the changes will be marked in color but have no “before  & after”)
+- The default is sorted by people.
+- The time is in chronological order.
+
+image:product4.png[]
+
+===== *Conclusion:*
+[cols="4*", options="header"]
+|===
+||*JIRA* |*asana* |*taiga*
+
+|Display
+|tab
+|*+++<u>list</u>+++*
+|tab
+
+|Time order
+|chronological
+|chronological
+|chronological
+
+|Info display order
+|avatar / who / what  / when/ *+++<u>content before & after </u>+++*
+|avatar / who / when / what
+|avatar / who / when / what
+
+|Sort by
+|people
+|people
+|people
+
+|===
+
+
+==== *2.User Research of using scenario*
+Pnt DevOps team use Jira very often,  I asked 10 users about how they use history and activity function in Jira.
+
+
+Question Setting:
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. In what situation will you use history / activity ?
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+
+
+===== *Research result:*
+[cols="7*", options="header"]
+|===
+||*Kerberos* |*Role* |*Duration of use* |*Frequency of use* |*Using scenario* |*Like to user history or activity*
+
+|1
+|bliu
+|dev
+|1
+|seldom
+|1.review my comment/activity log
+
+2.review others’ comment/activity log
+
+3.timeline
+|history
+
+|2
+|chuzhang
+|dev
+|2
+|sometimes
+|review others’ comment/activity log
+|history
+
+
+|3
+|yma
+|dev
+|3
+|seldom
+|1.issue priority change/ component/ epic link
+
+2.timeline
+|history
+
+|4
+|yzhu
+|dev
+|3
+|sometimes
+|1.review my comment/activity log
+
+2.review others’ comment/activity log
+
+3. open the history attachment
+|history
+
+|5
+|gli
+|Senior dev
+|3
+|often
+|1.review others’ comment/activity log
+
+2.timeline
+|history
+
+|6
+|yashi
+|PO
+|1
+|sometimes
+|history of label change
+|both
+
+|7
+|xuliu
+|Team Manager
+|3
+|sometimes
+|1.issue supervise
+
+2.history of label change
+|both
+
+|8
+|ryan
+|Team Manager
+|3
+|seldom
+|1.ppl management
+
+2.issue supervise
+|both
+
+|9
+|jzhao
+|QE manager
+|3
+|often
+|1.history of label change
+
+2.timeline
+|history
+
+|10
+|meli
+|QE
+|3
+|seldom
+|review others’ comment/activity log
+|history
+|===
+
+
+
+===== *Detail Dialogue:*
+*1. bliu  python developer  , using Jira for 1 year*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+
+- Seldom
+
+. In what situation will you use history / activity ?
+
+- When I need to review my comment / activity history
+- To check someone else’s activity timeline.
+
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+
+- no difference , I like to use history more, the logic of it is more clear
+
+*2. xuliu  java team manager , scrum meeting management, using Jira for 3 years*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+
+- sometimes, not very often, normally I will use comment function more.
+
+. In what situation will you use history / activity ?
+- When a issue is closed and reopen, I will figure out who did the action
+- The label change situation
+
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+
+- no difference , to me they are the same thing but I like to use history more.
+History is more clear.
+
+- I like the way of: field/original value/new value.
+
+* in history :John Casey made changes-6 days ago   Status In Progress [3] To Do [10009]
+
+* in activity:John Casey changed the status to To Do on NOS-629-Merge available versions     in brew into generated maven-metadata.xml for groups with enabled brew pull  Story6 days ago
+
+- when i need to see the issue description change, I can only see it in activity.
+
+*3. ryan  Python team manager, product manager ,using Jira for 3 years*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+- Seldom
+
+. In what situation will you use history / activity ?
+
+- Activity: To checkout what did the team member have done within a week
+
+- History: When the issue has something wrong， I need to checkout the working process and the status change.
+
+
+3. From your role, what is the difference between history and activity? Which one do you use more and why?
+I will use both, but I think they can combine together, not in different tabs.
+
+*4.yma  Java developer, using Jira for 3 years*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+- Seldom
+
+. In what situation will you use history / activity ?
+
+- I will use activity more
+* 1.check the issue priority change and some elements (component/ epic link)
+*2.Timeline of the issue
+
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+
+- I think history is more like the issue detail info display, activity is more like what did ppl do in this issue.
+
+*5. jzhao,  QE manager using , Jira for 3 years*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+- often
+. In what situation will you use history / activity ?
+
+- status change /  label
+
+- time line , who did what and when
+
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+- No difference to me but I use history more, it’s more clear to me
+
+*6. gli, senior java developer , using Jira for 3 years*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+- Often
+
+. In what situation will you use history / activity ?
+
+- I only user history to check who did the actions in what time (timeline)
+
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+
+- 'History' is everything that is changed in an issue.
+- 'Activity' will show only recent ones and it is not just about changes on the issue.
+It will show anything related to the issue, including activity related to the issue in linked applications like Stash, Bamboo etc.
+
+*7. yzhu,  java developer , using Jira for 3 years*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+- sometimes
+
+. In what situation will you use history / activity ?
+
+- I will use history to check who updated the issue.
+
+- I need to fix the wrong field that I typed in. Just return to the previous version
+
+- In history, you can find out all the attachment link of the current issue. Its quite useful
+
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+
+- no differences, I like user history than activity because its more human readable.
+
+*8. chuzhang, python developer, using lira for 2 years*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+
+- sometimes, not very often
+
+. In what situation will you use history / activity ?
+
+- To check the record, who changed what at what time
+
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+
+- looks the same to me , I will use history more, get used to it. Maybe because of the name.
+
+*9. yashi , python developer, product owner, using Jira for 1 year*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+
+- sometimes, not very often
+
+. In what situation will you use history / activity ?
+
+- the history change of labels
+
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+
+- looks the same to me , I will use history more, the format is more clear
+
+*10. meli, QE, using Jira for 3 years*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+
+- seldom use it
+
+. In what situation will you use history / activity ?
+
+- if someone changed the task summary or anything else that makes me feel its not suitable, I will check the history.
+
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+
+- For me, in history tab you can see all the history changes of the issue. I don't know what activity used for.
+
+===== *Conclusion:*
+
+. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+
+- Most of the users will use it sometimes but in a low frequency.
+
+. In what situation will you use history / activity ?
+
+- They will use history / activity to:
+1. review others’ comment/activity (5)
+2. check the issue timeline (4)
+3. check the history of label change (3)
+4. review my comment/activity (2)
+5. Issue supervise (2)
+6. ppl management (1)
+7. open the history attachment (1)
+8. check the issue priority change/ component/ epic link (1)
+
+. From your role, what is the difference between history and activity? Which one do you use more and why?
+
+- Most of the users think that history and activity are the same thing. But they will use history more because they think that the logic and display of history is more clear than activity.
+
+- When we are designing the wireframe, we could try to combine history together with activity.
+
+
+==== *3.The Comparison of  history and activity*
+
+History:
+
+image:historylogic.png[]
+
+Activity:
+
+image:activitylogic.png[]
+
+[cols="3*", options="header"]
+|===
+| |*History* |*Activity*
+
+|User group
+|Dev / QE / Reporter
+|Assignee’s manager
+
+(ppl management, issue supervise)
+
+|Logic
+|avatar / who / what  / *+++<u>content before & after </u>+++*
+|avatar / who / what  / content/ when
+
+|Sort by
+|People
+|Time
+
+|Time order
+|chronological
+|reverse chronological
+
+|Content
+|Compare with the previous status - before & after
+|Only know the current content change.
+
+|===
+
+==== *4. The entry of history / activity*
+1. Within an issue
+
+image:historyentry1.png[]
+
+image:historyentry2.png[]
+
+image:historyentry3.png[]
+
+2. Click the avatar, jump into summary page
+
+image:historyentry4.png[]
+
+image:historyentry5.png[]
