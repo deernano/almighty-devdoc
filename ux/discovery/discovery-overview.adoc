@@ -4,93 +4,33 @@
 == Overview
 Before we start the wireframe design of the work item history. We need to understand the issue and users’ scenario. The document is to research relevant aspects by asking  the following questions:
 
-. How the competitive product display history ?
+. How the current way of display history ?
 . What is the using scenario of history and activity ?
 . What is the differences between history and activity ?
 . Where to place the history function ?
 
 
 == Description
-==== *1. Competitive product history function display*
-The research is mainly focusing on 3 competitive products.
+==== *1. Current way of display history*
+The function display:
 
-. JIRA
-image:jira.jpg[]
-. asana
-image:asana.png[]
-. taiga
-image:taiga.png[]
+- Using tab to display history
 
-===== *a. JIRA*
-Using tab to display history
+- Using a list to display history
 
-image:product1.png[]
+The content  format:
 
-The content display format is:
-
-- avatar / who / what  / when  / content before & after
-- The default is sorted by people.
-- The time is in chronological order.
-
-image:product2.png[]
-
-===== *b.asana*
-Using a list to display history
-
-The content display format is :
-
-- avatar / who / when / what
-- The default is sorted by people.
-- The time is in chronological order.
-
-image:product3.png[]
-
-===== *c.taiga*
-Using tab to display history
-
-The content display format is :
-
-- avatar / who / when/ what   ( the changes will be marked in color but have no “before  & after”)
-- The default is sorted by people.
-- The time is in chronological order.
-
-image:product4.png[]
-
-===== *Conclusion:*
-[cols="4*", options="header"]
-|===
-||*JIRA* |*asana* |*taiga*
-
-|Display
-|tab
-|*+++<u>list</u>+++*
-|tab
-
-|Time order
-|chronological
-|chronological
-|chronological
-
-|Info display order
-|avatar / who / what  / when/ *+++<u>content before & after </u>+++*
-|avatar / who / when / what
-|avatar / who / when / what
-
-|Sort by
-|people
-|people
-|people
-
-|===
-
+- avatar / who / did  / what  / when / comparison of old content and new changes
+- The order is sorted by people.
+- The time order is chronological order.
 
 ==== *2.User Research of using scenario*
-Pnt DevOps team use Jira very often,  I asked 10 users about how they use history and activity function in Jira.
+I asked 10 users about how they use the history and activity function.
 
 
 Question Setting:
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you use history / activity function very often? （seldom/ sometimes/ often)
 . In what situation will you use history / activity ?
 . From your role, what is the difference between history and activity? Which one do you use more and why?
 
@@ -205,7 +145,7 @@ Question Setting:
 ===== *Detail Dialogue:*
 *1. bliu  python developer  , using Jira for 1 year*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 
 - Seldom
 
@@ -220,7 +160,7 @@ Question Setting:
 
 *2. xuliu  java team manager , scrum meeting management, using Jira for 3 years*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 
 - sometimes, not very often, normally I will use comment function more.
 
@@ -243,7 +183,7 @@ History is more clear.
 
 *3. ryan  Python team manager, product manager ,using Jira for 3 years*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 - Seldom
 
 . In what situation will you use history / activity ?
@@ -258,7 +198,7 @@ I will use both, but I think they can combine together, not in different tabs.
 
 *4.yma  Java developer, using Jira for 3 years*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 - Seldom
 
 . In what situation will you use history / activity ?
@@ -273,7 +213,7 @@ I will use both, but I think they can combine together, not in different tabs.
 
 *5. jzhao,  QE manager using , Jira for 3 years*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 - often
 . In what situation will you use history / activity ?
 
@@ -286,7 +226,7 @@ I will use both, but I think they can combine together, not in different tabs.
 
 *6. gli, senior java developer , using Jira for 3 years*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 - Often
 
 . In what situation will you use history / activity ?
@@ -301,7 +241,7 @@ It will show anything related to the issue, including activity related to the is
 
 *7. yzhu,  java developer , using Jira for 3 years*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 - sometimes
 
 . In what situation will you use history / activity ?
@@ -318,7 +258,7 @@ It will show anything related to the issue, including activity related to the is
 
 *8. chuzhang, python developer, using lira for 2 years*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 
 - sometimes, not very often
 
@@ -332,7 +272,7 @@ It will show anything related to the issue, including activity related to the is
 
 *9. yashi , python developer, product owner, using Jira for 1 year*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 
 - sometimes, not very often
 
@@ -346,7 +286,7 @@ It will show anything related to the issue, including activity related to the is
 
 *10. meli, QE, using Jira for 3 years*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 
 - seldom use it
 
