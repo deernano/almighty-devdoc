@@ -7,7 +7,7 @@ Before we start the wireframe design of the work item history. We need to unders
 . How the current way of display history ?
 . What is the using scenario of history and activity ?
 . What is the differences between history and activity ?
-. Where to place the history function ?
+. Where to improve?
 
 
 == Description
@@ -20,7 +20,7 @@ The function display:
 
 The content  format:
 
-- avatar / who / did  / what  / when / comparison of old content and new changes
+- avatar / who / did what  / when / comparison of old content and new changes
 - The order is sorted by people.
 - The time order is chronological order.
 
@@ -300,7 +300,7 @@ It will show anything related to the issue, including activity related to the is
 
 ===== *Conclusion:*
 
-. When you are using Jira, will you  use history / activity function very often? （seldom/ sometimes/ often)
+. Will you  use history / activity function very often? （seldom/ sometimes/ often)
 
 - Most of the users will use it sometimes but in a low frequency.
 
@@ -320,18 +320,7 @@ It will show anything related to the issue, including activity related to the is
 
 - Most of the users think that history and activity are the same thing. But they will use history more because they think that the logic and display of history is more clear than activity.
 
-- When we are designing the wireframe, we could try to combine history together with activity.
-
-
 ==== *3.The Comparison of  history and activity*
-
-History:
-
-image:historylogic.png[]
-
-Activity:
-
-image:activitylogic.png[]
 
 [cols="3*", options="header"]
 |===
@@ -344,7 +333,7 @@ image:activitylogic.png[]
 (ppl management, issue supervise)
 
 |Logic
-|avatar / who / what  / *+++<u>content before & after </u>+++*
+|avatar / who / did what / when / comparison of before & after
 |avatar / who / what  / content/ when
 
 |Sort by
@@ -361,17 +350,14 @@ image:activitylogic.png[]
 
 |===
 
-==== *4. The entry of history / activity*
-1. Within an issue
+==== *4. What to improve*
 
-image:historyentry1.png[]
+- The current history design is mainly to display the comparison of old content and new changes.  (somebody make changes on something )
 
-image:historyentry2.png[]
+- The current activity design is mainly to describe the events that happened within the current issue.(somebody did something on someday)
 
-image:historyentry3.png[]
+When we are designing the wireframe, we could try to combine history and activity together.
 
-2. Click the avatar, jump into summary page
+The content display will be like: somebody / on someday / did what action / on something (comparison of "before & after").
 
-image:historyentry4.png[]
-
-image:historyentry5.png[]
+We could put the  activity stream to the personal page. When clicking the avatar. It will jump to the personal information page. Users could see what activity or movement that the current person have done.
